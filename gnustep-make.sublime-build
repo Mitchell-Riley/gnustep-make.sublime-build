@@ -1,0 +1,31 @@
+{
+	"path": "C:\\GNUstep\\msys\\1.0\\bin;C:\\GNUstep\\bin;C:\\GNUstep\\GNUstep\\System\\Tools",
+	"env": {"GNUSTEP_MAKEFILES": "C:\\GNUstep\\GNUstep\\System\\Library\\Makefiles"},
+
+	"shell": true,
+	"working_dir": "$file_path",
+	"selector": "source.makefile",
+	"cmd": ["make"],
+
+		"variants": 
+		[
+			{
+				"name": "clean",
+				"shell": true,
+				"working_dir": "$file_path",
+				"cmd": ["make", "clean"]
+			},
+
+			{
+				"name": "openapp",
+				"working_dir": "$file_path",
+				"cmd": ["FOR %I IN (.) DO START %~nI%~xI.app/%~nI%~xI.exe"]
+			}
+
+			// {
+			// 	"name": "tskill",
+			// 	"path": "C:\\WINDOWS\\system32",
+			// 	"cmd": ["tskill firstWindow"]
+			// }
+		]
+}
